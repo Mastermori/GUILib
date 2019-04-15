@@ -56,6 +56,7 @@ public class GUIHandler {
 
     public void add(GUIElement ge) {
         addGui.add(ge);
+        ge.setHandler(this);
     }
 
     public void remove(GUIElement ge) {

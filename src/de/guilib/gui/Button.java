@@ -6,13 +6,12 @@ public class Button extends GUIElement {
 
     protected String text;
 
-    public Button(String text, int x, int y, int width, int height, GUIHandler handler) {
-        super(x, y, width, height, true, handler);
-        this.text = text;
+    public Button(String text, int x, int y, int width, int height) {
+        this(text, x, y, width, height, null);
     }
 
-    public Button(String text, int x, int y, int width, int height, GUIAction action, GUIHandler handler) {
-        super(x, y, width, height, true, handler);
+    public Button(String text, int x, int y, int width, int height, GUIAction action) {
+        super(x, y, width, height, true);
         this.text = text;
         setAction(action);
     }

@@ -8,14 +8,14 @@ public class FadeText extends Text {
     private int duration;
     private long last;
 
-    public FadeText(String text, int x, int y, int fontSize, int duration, int color, GUIHandler handler) {
-        super(text, x, y, fontSize, color, handler);
+    public FadeText(String text, int x, int y, int fontSize, int duration, int color) {
+        super(text, x, y, fontSize, color);
         this.duration = duration;
         last = System.currentTimeMillis();
     }
 
-    public FadeText(String text, int x, int y, PFont font, int duration, int color, GUIHandler handler) {
-        super(text, x, y, font, color, handler);
+    public FadeText(String text, int x, int y, PFont font, int duration, int color) {
+        super(text, x, y, font, color);
         this.duration = duration;
         last = System.currentTimeMillis();
     }

@@ -14,15 +14,12 @@ public abstract class GUIElement {
     protected GUIAction action;
     protected GUIHandler handler;
 
-    public GUIElement(int x, int y, int width, int height, boolean clickable, GUIHandler handler) {
+    public GUIElement(int x, int y, int width, int height, boolean clickable) {
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
         this.clickable = clickable;
-        if (clickable)
-            handler.addClickable(this);
-        this.handler = handler;
         visible = true;
     }
 
@@ -38,6 +35,12 @@ public abstract class GUIElement {
 
     public boolean overLapping(int x, int y) {
         return x > this.x && y > this.y && x < this.x + width && y < this.y + height;
+    }
+
+    protected void setHandler(GUIHandler handler) {
+        this.handler = handler;
+        if (clickable)
+            handler.addClickable(this);
     }
 
 
